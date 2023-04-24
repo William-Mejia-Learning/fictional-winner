@@ -22,19 +22,23 @@ while running:
     
     bush_surf = pygame.image.load('assets/PNG/Assets/Bush_simple1_1.png').convert_alpha()
     bush_2_surf = pygame.image.load('assets/PNG/Assets/Burned_tree1.png').convert_alpha()
-    bush_rect = bush_surf.get_rect(midbottom=(80,300))
-    bush_rect_2 = bush_surf.get_rect(midbottom=(100,200))
-    bush_rect_3 = bush_surf.get_rect(midbottom=(100,500))
-    bush_rect_4 = bush_surf.get_rect(midbottom=(200,300))
-    bush_rect_5 = bush_surf.get_rect(midbottom=(300,300))
-    bush_rect_6 = bush_surf.get_rect(midbottom=(50,300))
+    
+    assets_dict = {
+            'bush_rect': bush_surf.get_rect(midbottom=(80,300)),
+            'bush_rect_2': bush_surf.get_rect(midbottom=(100,200)),
+            'bush_rect_3':bush_surf.get_rect(midbottom=(100,500)),
+            'bush_rect_4': bush_surf.get_rect(midbottom=(200,300)),
+            'bush_rect_5': bush_surf.get_rect(midbottom=(300,300)),
+            'bush_rect_6': bush_surf.get_rect(midbottom=(50,300))
+
+            }
+
 
     bush2_rect = bush_surf.get_rect(midbottom=(100,100)) 
 
-    bush_list = [bush_rect, bush_rect_2, bush_rect_3, bush_rect_4, bush_rect_5, bush_rect_6]
-    
-    for bush in bush_list:
-        screen.blit(bush_surf, bush)
+     
+    for key, value in assets_dict.items():
+        screen.blit(bush_surf, value)
     screen.blit(bush_2_surf, bush2_rect)
     
     
